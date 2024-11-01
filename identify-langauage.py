@@ -1,7 +1,5 @@
 import whisper
 import os
-import numpy as np
-
 
 model = whisper.load_model("turbo")
 
