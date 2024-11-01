@@ -12,7 +12,7 @@ for audio_file in files:
     # load audio and pad/trim it to fit 30 seconds
     file_path = os.path.join(os.getcwd(), audio_file + ".m4a")
     print(file_path)
-    audio = whisper.read(file_path)
+    audio = whisper.load_audio(file_path)
     audio = whisper.pad_or_trim(audio)
 
     # make log-Mel spectrogram and move to the same device as the model
