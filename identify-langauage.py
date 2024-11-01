@@ -32,14 +32,15 @@ for audio_file in files:
     print(f"Detected language: {max(probs, key=probs.get)}")
 
     # decode the audio
-    options = whisper.DecodingOptions()
-    result = whisper.decode(model, mel, options)
+    # options = whisper.DecodingOptions()
+    # result = whisper.decode(model, mel, options)
 
-    # print the recognized text
-    print(result.text)
+    # # print the recognized text
+    # print(result.text)
 
+print("Say something...")
 audio = record_audio()
-audio = whispter.pad_or_trim(audio)
+audio = whisper.pad_or_trim(audio)
 # make log-Mel spectrogram and move to the same device as the model
 mel = whisper.log_mel_spectrogram(audio, n_mels=128).to(model.device)
 
